@@ -13,7 +13,7 @@ final class LiveFileHandler[F[_]: Async] extends FileHandler[F] {
 
   override def readFile(path: String): fs2.Stream[F, String] = {
     Files[F]
-      .readAll(Path("src/main/resources/day1_input.txt"))
+      .readAll(Path(path))
       .through(text.utf8.decode[F])
       .through(text.lines)
   }
