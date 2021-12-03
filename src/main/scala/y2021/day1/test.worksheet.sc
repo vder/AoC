@@ -26,3 +26,10 @@ val io = z
 io.compile.toList.unsafeRunSync()
 
 IO { println("test") }.unsafeRunSync()
+
+
+val v1= Vector(1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0)
+val v2= Vector(1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0)
+
+val v3 = (v1 zip v2)
+v3.map{ case(x,y)=> x+y}

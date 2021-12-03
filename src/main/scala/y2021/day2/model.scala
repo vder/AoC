@@ -1,4 +1,4 @@
-package template.y2021.day2
+package y2021.day2
 
 import cats.parse.Rfc5234.{sp, alpha, digit}
 import cats.parse.Parser

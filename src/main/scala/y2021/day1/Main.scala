@@ -2,7 +2,7 @@ package y2021.day1
 
 import cats.effect.{IO, IOApp}
 import scala.concurrent.duration._
-import template.y2021.common.FileHandler
+import y2021.common.FileHandler
 import cats.implicits._
 import fs2.Pipe
 

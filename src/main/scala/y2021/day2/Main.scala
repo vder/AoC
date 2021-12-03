@@ -2,11 +2,11 @@ package y2021.day2
 
 import cats.effect.{IO, IOApp}
 import scala.concurrent.duration._
-import template.y2021.common.FileHandler
+import y2021.common.FileHandler
 import cats.implicits._
 import fs2.Pipe
-import template.y2021.day2.model._
-import template.y2021.day2.model.Command._
+import y2021.day2.model._
+import y2021.day2.model.Command._
 
 object Main extends IOApp.Simple {
 
@@ -37,14 +37,14 @@ object Main extends IOApp.Simple {
   val run =
     lines
       .fold(Part1State(0, 0))(part1Controller)
+      .evalMap(x => IO { println(x) })
       .compile
-      .last
-      .flatMap(x => IO { println(s"$x = ${x.map(y => y.pos * y.depth)}") })
+      .drain
     *>
     lines
       .fold(Part2State(0, 0, 0))(part2Controller)
+      .evalMap(x => IO { println(x) })
       .compile
-      .last
-      .flatMap(x => IO { println(s"$x = ${x.map(y => y.pos * y.depth)}") })
-
+      .drain
+      
 }

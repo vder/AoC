@@ -1,4 +1,4 @@
-package template.y2021.common
+package y2021.common
 
 import fs2.io.file.Files
 import cats.effect.kernel.Async
