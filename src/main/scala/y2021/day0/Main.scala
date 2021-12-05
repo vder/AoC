@@ -1,7 +1,7 @@
 package y2021.day0
 
 import cats.effect.{IO, IOApp}
-import scala.concurrent.duration._
+import scala.concurrent.duration.*
 
 object Main extends IOApp.Simple {
   val run =

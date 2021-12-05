@@ -1,9 +1,9 @@
 package y2021.day1
 
 import cats.effect.{IO, IOApp}
-import scala.concurrent.duration._
+import scala.concurrent.duration.*
 import y2021.common.FileHandler
-import cats.implicits._
+import cats.implicits.*
 import fs2.Pipe
 
 object Main extends IOApp.Simple {

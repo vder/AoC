@@ -10,5 +10,6 @@ lazy val root = project
     libraryDependencies += "co.fs2" %% "fs2-io" % "3.2.2",
     libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test",
     libraryDependencies += "org.typelevel" %% "cats-effect" % "3.3.0",
-    libraryDependencies += "org.typelevel" %% "cats-parse" % "0.3.6"
+    libraryDependencies += "org.typelevel" %% "cats-parse" % "0.3.6",
+    scalacOptions += "-source:future"
   )

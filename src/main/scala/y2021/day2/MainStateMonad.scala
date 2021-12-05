@@ -1,13 +1,13 @@
 package y2021.day2
 
 import cats.effect.{IO, IOApp}
-import scala.concurrent.duration._
+import scala.concurrent.duration.*
 import y2021.common.FileHandler
-import cats.implicits._
+import cats.implicits.*
 import fs2.Pipe
 import fs2.Stream
-import y2021.day2.model._
-import y2021.day2.model.Command._
+import y2021.day2.model.*
+import y2021.day2.model.Command.*
 import cats.data.State
 
 object MainStateMonad extends IOApp.Simple {
@@ -52,8 +52,8 @@ object MainStateMonad extends IOApp.Simple {
       .foreach(x => IO { println(x) })
 
   val run =
-    (calculate(part1Controler _)(Part1State(0, 0))(lines)
-      ++ calculate(part2Controler _)(Part2State(0, 0, 0))(
+    (calculate(part1Controler)(Part1State(0, 0))(lines)
+      ++ calculate(part2Controler)(Part2State(0, 0, 0))(
         lines
       )).compile.drain
 }

@@ -1,9 +1,9 @@
 package y2021.day3
 
 import cats.effect.{IO, IOApp}
-import scala.concurrent.duration._
+import scala.concurrent.duration.*
 import y2021.common.FileHandler
-import cats.implicits._
+import cats.implicits.*
 import fs2.Pipe
 import fs2.Stream
 import cats.data.State
@@ -64,7 +64,7 @@ object Main extends IOApp.Simple {
     } yield result
   }
 
-  val part1 = popular(part1Controler _, init, lines, true)
+  val part1 = popular(part1Controler, init, lines, true)
     .map(x => (x, x.invert))
     .map { case (g, e) =>
       (g.toInt, e.toInt, g.toInt * e.toInt)
@@ -75,7 +75,7 @@ object Main extends IOApp.Simple {
 
   val part2 = {
     val filtered = for {
-      f <- popular(part1Controler _, init, lines, true)
+      f <- popular(part1Controler, init, lines, true)
       result1 <- filter(lines, f, 0, true)
       result2 <- filter(lines, f.invert, 0, false)
     } yield (result1, result2)
